@@ -2,7 +2,7 @@
 #include <stdio.h>
 int main()
 {
-    int arr1[4][4];
+    int arr1[4][4],arr2[4][4];
     printf("Enter Values for Matrix\n");
     for(int i=0;i<4;i++)
     {
@@ -12,7 +12,13 @@ int main()
             scanf("%d",&arr1[i][j]);
         }
     }
-
+    for(int a=0;a<4;a++)
+    {
+        for(int b=0;b<4;b++)
+        {
+            arr2[a][b]=arr1[b][a];
+        }
+    }
     printf("Original Matrix\n");
     for(int x=0;x<4;x++)
     {
@@ -22,25 +28,13 @@ int main()
             printf("%d\t",arr1[x][y]);
         }
     }
-
-
-    for(int a=0;a<4;a++)
-    {
-        for(int b=a+1;b<4;b++)
-        {
-            int temp;
-            temp=arr1[a][b];
-            arr1[a][b]=arr1[b][a];
-            arr1[b][a]=temp;
-        }
-    }
     printf("\nTransposed Matrix\n");
     for(int p=0;p<4;p++)
     {
         printf("\n");
         for(int q=0;q<4;q++)
         {
-            printf("%d\t",arr1[p][q]);
+            printf("%d\t",arr2[p][q]);
         }
     }
     return 0;
